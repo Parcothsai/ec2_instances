@@ -1,21 +1,21 @@
 #!/bin/bash
-#########################################################
-# MAINTENER : Parco Thsai
-# DATE : 30/10/2019
-#
-#
-# REQUIREMENT :
-# AWS account ( WITH ACCESS AND PRIVATE KEY )
-# AWS permissions on EC2, CLI
-# Virtualenv : https://gist.github.com/frfahim/73c0fad6350332cef7a653bcd762f08d
-# Permission on actual directory : chmod +x status_ec2.sh
-#
-# TO CREATE A PROFILE : aws configure --profil  your_profile
-# WHEN PROFILE CREATED, CHANGE VARIABLE PROFILE : profile="--profile your_proifle
-# TESTED ON : Debian 10
-#
-# READ README.md for more informations
-######################################################
+ #######################################################################################
+# MAINTENER : Parco Thsai								#
+# DATE : 30/10/2019									#
+#											#
+#											#
+# REQUIREMENT :										#
+# AWS account ( WITH ACCESS AND PRIVATE KEY )						#
+# AWS permissions on EC2, CLI								#
+# Virtualenv : https://gist.github.com/frfahim/73c0fad6350332cef7a653bcd762f08d		#
+# Permission on actual directory : chmod +x status_ec2.sh				#
+#											#
+# TO CREATE A PROFILE : aws configure --profil  your_profile				#
+# WHEN PROFILE CREATED, CHANGE VARIABLE PROFILE : profile="--profile your_proifle	#
+# TESTED ON : Debian 10									#
+#											#
+# READ README.md for more informations							#
+ #######################################################################################
 function start () {
 	aws ec2 start-instances  --instance-ids $1  $profile
 }
