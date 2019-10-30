@@ -16,7 +16,6 @@
 #
 #
 ######################################################
-profile="--profile parco"
 function start () {
 	aws ec2 start-instances  --instance-ids $1  $profile
 }
