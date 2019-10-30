@@ -14,7 +14,7 @@
 # WHEN PROFILE CREATED, CHANGE VARIABLE PROFILE : profile="--profile your_proifle
 # TESTED ON : Debian 10
 #
-#
+# READ README.md for more informations
 ######################################################
 function start () {
 	aws ec2 start-instances  --instance-ids $1  $profile
