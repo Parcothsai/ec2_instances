@@ -9,9 +9,11 @@
 # AWS permissions on EC2, CLI								#
 # Virtualenv : https://gist.github.com/frfahim/73c0fad6350332cef7a653bcd762f08d		#
 # Permission on actual directory : chmod +x status_ec2.sh				#
+# Install jq 										#
 #											#
-# TO CREATE A PROFILE : aws configure --profil  your_profile				#
-# WHEN PROFILE CREATED, CHANGE VARIABLE PROFILE : profile="--profile your_proifle	#
+# TO CREATE A PROFILE : aws configure --profile  your_profile				#
+# WHEN PROFILE CREATED, CHANGE VARIABLE PROFILE : profile="--profile your_profile	#
+#											#
 # TESTED ON : Debian 10									#
 #											#
 # READ README.md for more informations							#
@@ -24,7 +26,7 @@ function stop () {
 	aws ec2 stop-instances --instance-ids $1 $profile
 }
 function showinformation () {
-	aws ec2 describe-instances --query 'Reservations[*].Instances[*].{Instance:InstanceId,InstanceState:State,Name:Tags,IP:PublicDnsName,Key:KeyName}' $profile
+	aws ec2 describe-instances --query 'Reservations[*].Instances[*].{Instance:InstanceId,InstanceState:State,Name:Tags,IP:PublicDnsName,Key:KeyName}' $profile | jq
 }
 
 function rebootid () {
