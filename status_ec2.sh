@@ -9,7 +9,7 @@
 # AWS permissions on EC2, CLI								#
 # Virtualenv : https://gist.github.com/frfahim/73c0fad6350332cef7a653bcd762f08d		#
 # Permission on actual directory : chmod +x status_ec2.sh				#
-# Install jq 										#
+# Install jq | sudo apt-get install -y jq 										#
 #											#
 # TO CREATE A PROFILE : aws configure --profile  your_profile				#
 # WHEN PROFILE CREATED, CHANGE VARIABLE PROFILE : profile="--profile your_profile	#
